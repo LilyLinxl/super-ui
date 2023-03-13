@@ -5,10 +5,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Button size={ButtonSize.Large} disabled>
-          22
+          add info
         </Button>
         <Button btnType={ButtonType.Link} href="www.baidu.com">
-          33
+          edit info
         </Button>
       </header>
     </div>
