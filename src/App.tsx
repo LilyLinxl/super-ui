@@ -10,6 +10,11 @@ function App() {
         <Button btnType={ButtonType.Link} href="www.baidu.com">
           edit info
         </Button>
+        <Button btnType={ButtonType.Primary}>edit info</Button>
+        <Button btnType={ButtonType.Danger}>edit info</Button>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Small}>
+          edit info
+        </Button>
       </header>
     </div>
   );
