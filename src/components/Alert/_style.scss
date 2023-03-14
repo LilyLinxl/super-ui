@@ -18,6 +18,14 @@
   .close-btn {
     cursor: pointer;
   }
+  div > div {
+    font-weight: $alert-title-font-weight;
+    font-size: $alert-title-font-size;
+    margin-bottom: $alert-title-margin-bottom;
+  }
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .alert-success {

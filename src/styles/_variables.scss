@@ -219,14 +219,16 @@ $btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
 // alert
 // alert 基本属性
 $alert-font-weight: 400;
-$alert-padding-y: 0.375rem !default;
-$alert-padding-x: 0.65rem !default;
+$alert-padding-y: 0.75rem !default;
+$alert-padding-x: 1rem !default;
 $alert-font-family: $font-family-base !default;
 $alert-font-size: $font-size-sm !default;
 $alert-line-height: $line-height-base !default;
 $alert-width: 25rem;
 $alert-border-radius: $border-radius !default;
-
+$alert-title-font-size: $font-size-base !default;
+$alert-title-margin-bottom: 0.25rem !default;
+$alert-title-font-weight: 600;
 // alert边框
 $alert-border-width: $border-width !default;
 

@@ -25,7 +25,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
   return visible ? (
     <div className={classnames} {...restProps}>
       <div>
-        {title && <h5>{title}</h5>}
+        {title && <div>{title}</div>}
         {content && <p>{content}</p>}
       </div>
       {closeable && (
