@@ -37,16 +37,14 @@ function App() {
           content={"网络错误，请检查网络"}
           closeable
         />
-        <Alert
-          alertType={AlertType.Default}
-          title={"提示"}
-          content={"请确认是否进行该操作"}
-          closeable
-        />
+        <div>222</div>
+        <Alert alertType={AlertType.Default} title={"提示"} />
         <Alert
           alertType={AlertType.Warning}
           title={"警告"}
-          content={"该操作有风险，请注意"}
+          content={
+            "该操作有风险，请注意,该操作有风险，请注意,该操作有风险，请注意该操作有风险，请注意,,该操作有风险，请注意该操作有风险，请注意该操作有风险，请注意"
+          }
         />
         <Alert alertType={AlertType.Success} content={"操作成功"} />
       </header>

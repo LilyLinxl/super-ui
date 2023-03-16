@@ -7,7 +7,7 @@ export enum AlertType {
   Default = "default",
   Warning = "warning",
 }
-interface BaseAlertProps {
+export interface AlertProps {
   className?: string;
   alertType?: string;
   closeable?: boolean;
@@ -15,7 +15,7 @@ interface BaseAlertProps {
   content?: string;
 }
 
-const Alert: React.FC<BaseAlertProps> = (props) => {
+const Alert: React.FC<AlertProps> = (props) => {
   const { alertType, closeable, title, content, className, ...restProps } =
     props;
   const [visible, setVisible] = useState(true);

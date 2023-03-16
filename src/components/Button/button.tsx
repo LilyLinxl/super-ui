@@ -22,7 +22,7 @@ type NativeButtonProps = BaseButtonProps &
   React.ButtonHTMLAttributes<HTMLElement>;
 type NativeLinkProps = BaseButtonProps & React.LinkHTMLAttributes<HTMLElement>;
 
-type ButtonProps = Partial<NativeButtonProps & NativeLinkProps>;
+export type ButtonProps = Partial<NativeButtonProps & NativeLinkProps>;
 const Button: React.FC<ButtonProps> = (props) => {
   const { disabled, href, size, btnType, children, className, ...restProps } =
     props;
