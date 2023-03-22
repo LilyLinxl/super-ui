@@ -1,7 +1,22 @@
 import React from "react";
 import Alert, { AlertType } from "./components/Alert/alert";
 import Button, { ButtonSize, ButtonType } from "./components/Button/button";
+import Menu, { MenuMode } from "./components/Menu/menu";
 function App() {
+  const items = [
+    {
+      label: "首页",
+      key: "home",
+    },
+    {
+      label: "新闻",
+      key: "news",
+    },
+    {
+      label: "个人中心",
+      key: "center",
+    },
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -47,6 +62,8 @@ function App() {
           }
         />
         <Alert alertType={AlertType.Success} content={"操作成功"} />
+        <Menu items={items} mode={MenuMode.Horizontal} />
+        <Menu items={items} mode={MenuMode.Vertical} />
       </header>
     </div>
   );
