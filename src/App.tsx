@@ -11,10 +11,21 @@ function App() {
     {
       label: "新闻",
       key: "news",
+      children: [
+        {
+          label: "党建新闻",
+          key: "party",
+        },
+        {
+          label: "园区新闻",
+          key: "yuanqu",
+        },
+      ],
     },
     {
       label: "个人中心",
       key: "center",
+      disabled: true,
     },
   ];
   return (
@@ -63,6 +74,7 @@ function App() {
         />
         <Alert alertType={AlertType.Success} content={"操作成功"} />
         <Menu items={items} mode={MenuMode.Horizontal} />
+        <div style={{ height: "100px" }}></div>
         <Menu items={items} mode={MenuMode.Vertical} />
       </header>
     </div>

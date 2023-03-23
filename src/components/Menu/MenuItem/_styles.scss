@@ -1,0 +1,12 @@
+.menu-item-disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+.menu-item-children {
+  position: absolute;
+  border: 2px solid rgb(20, 71, 117);
+  padding: 10px;
+  .menu-sub-item-active {
+    background-color: rgb(141, 177, 216);
+  }
+}

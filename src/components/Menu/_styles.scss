@@ -1,8 +1,30 @@
 .menu {
+  .menu-item {
+    cursor: pointer;
+  }
 }
 .menu-horizontal {
   display: flex;
+  .menu-item {
+    padding-bottom: 3px;
+    margin-right: 15px;
+    border-bottom: 3px solid transparent;
+  }
+  .menu-horizontal-item-active {
+    border-bottom: 3px solid rgb(33, 124, 221);
+    color: rgb(33, 124, 221);
+    transition: all 0.5s ease-in;
+  }
 }
-.active {
-  color: red;
+.menu-vertical {
+  .menu-item {
+    padding-left: 3px;
+    margin-bottom: 15px;
+    border-left: 3px solid transparent;
+  }
+  .menu-vertical-item-active {
+    border-left: 3px solid rgb(33, 124, 221);
+    color: rgb(33, 124, 221);
+    transition: all 0.5s ease-in;
+  }
 }

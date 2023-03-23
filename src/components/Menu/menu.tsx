@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Children, useState } from "react";
 import MenuItem, { MenuItemProps } from "./MenuItem/menuItem";
 import classNames from "classnames";
 import "./_styles.scss";
@@ -17,7 +17,9 @@ interface MenuProps {
 }
 const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, items, onClick, onSelect, selectedKey } = props;
-  const [selectedItem, setSelectedItem] = useState(selectedKey);
+  const [selectedItem, setSelectedItem] = useState(
+    selectedKey || items?.[0].key
+  );
   const defaultClick = (item: MenuItemProps) => {
     setSelectedItem(item.key);
   };
@@ -30,9 +32,13 @@ const Menu: React.FC<MenuProps> = (props) => {
         return (
           <div
             onClick={() => {
-              onClick ? onClick() : defaultClick(v);
+              v.disabled || (onClick ? onClick(v) : defaultClick(v));
             }}
-            className={selectedItem === v.key ? "active" : ""}
+            className={
+              selectedItem === v.key
+                ? `menu-item menu-${mode}-item-active`
+                : "menu-item"
+            }
             key={v.key}
           >
             <MenuItem {...v} />
