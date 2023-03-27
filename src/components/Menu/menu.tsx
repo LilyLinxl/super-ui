@@ -12,11 +12,10 @@ interface MenuProps {
   mode?: MenuMode;
   items: MenuItemProps[];
   onClick?: Function;
-  onSelect?: Function;
   selectedKey?: string;
 }
 const Menu: React.FC<MenuProps> = (props) => {
-  const { className, mode, items, onClick, onSelect, selectedKey } = props;
+  const { className, mode, items, onClick, selectedKey } = props;
   const [selectedItem, setSelectedItem] = useState(
     selectedKey || items?.[0].key
   );
@@ -34,14 +33,17 @@ const Menu: React.FC<MenuProps> = (props) => {
             onClick={() => {
               v.disabled || (onClick ? onClick(v) : defaultClick(v));
             }}
-            className={
-              selectedItem === v.key
-                ? `menu-item menu-${mode}-item-active`
-                : "menu-item"
-            }
             key={v.key}
           >
-            <MenuItem {...v} />
+            <MenuItem
+              {...v}
+              mode={mode}
+              className={
+                selectedItem === v.key
+                  ? `menu-item menu-${mode}-item-active`
+                  : "menu-item"
+              }
+            />
           </div>
         );
       })}

@@ -15,10 +15,12 @@ function App() {
         {
           label: "党建新闻",
           key: "party",
+          onClick: (v: any) => console.log("v", v),
         },
         {
           label: "园区新闻",
           key: "yuanqu",
+          onClick: (v: any) => console.log("v", v),
         },
       ],
     },
