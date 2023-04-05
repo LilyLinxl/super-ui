@@ -46,6 +46,18 @@ function App() {
         </MenuItem>
         <MenuItem index={2}>menu2</MenuItem>
       </Menu>
+      <Menu
+        onSelect={(index) => {
+          alert(index);
+        }}
+        mode="vertical"
+      >
+        <MenuItem index={0}>menu1</MenuItem>
+        <MenuItem index={1} disabled>
+          menu2
+        </MenuItem>
+        <MenuItem index={2}>menu2</MenuItem>
+      </Menu>
       {/* <header className="App-header">
         BUTTON
         <Button
