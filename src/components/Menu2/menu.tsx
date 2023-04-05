@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import classNames from "classnames";
+import { MenuItemProps } from "./menuItem";
 type MenuMode = "vertical" | "horizontal";
 type OnSelectCallback = (selectedIndex: number) => void;
 export interface MenuProps {
@@ -38,10 +39,23 @@ const Menu: React.FC<MenuProps> = (props) => {
     index: currentActive ? currentActive : 0,
     onSelect: handleSelect,
   };
+
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement =
+        child as React.FunctionComponentElement<MenuItemProps>;
+      const { displayName } = childElement.type;
+      if (displayName === "MenuItem") {
+        return React.cloneElement(childElement, { index });
+      } else {
+        console.error("Warning:Menu has a child which is not a MenuItem type");
+      }
+    });
+  };
   return (
     <ul className={classnames} style={style} data-testid={"test-menu"}>
       <MenuContext.Provider value={passedContent}>
-        {children}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   );
