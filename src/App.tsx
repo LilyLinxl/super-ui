@@ -35,10 +35,16 @@ function App() {
   ];
   return (
     <div className="App">
-      <Menu>
-        <MenuItem>menu1</MenuItem>
-        <MenuItem disabled>menu2</MenuItem>
-        <MenuItem>menu2</MenuItem>
+      <Menu
+        onSelect={(index) => {
+          alert(index);
+        }}
+      >
+        <MenuItem index={0}>menu1</MenuItem>
+        <MenuItem index={1} disabled>
+          menu2
+        </MenuItem>
+        <MenuItem index={2}>menu2</MenuItem>
       </Menu>
       {/* <header className="App-header">
         BUTTON
