@@ -4,47 +4,25 @@ import Button, { ButtonSize, ButtonType } from "./components/Button/button";
 import MenuItem from "./components/Menu2/menuItem";
 // import Menu, { MenuMode } from "./components/Menu/menu";
 import Menu from "./components/Menu2/menu";
+import SubMenu from "./components/Menu2/subMenu";
 
 function App() {
-  const items = [
-    {
-      label: "首页",
-      key: "home",
-    },
-    {
-      label: "新闻",
-      key: "news",
-      children: [
-        {
-          label: "党建新闻",
-          key: "party",
-          onClick: (v: any) => console.log("v", v),
-        },
-        {
-          label: "园区新闻",
-          key: "yuanqu",
-          onClick: (v: any) => console.log("v", v),
-        },
-      ],
-    },
-    {
-      label: "个人中心",
-      key: "center",
-      disabled: true,
-    },
-  ];
   return (
     <div className="App">
       <Menu
         onSelect={(index) => {
           alert(index);
         }}
+        mode="horizontal"
       >
-        <MenuItem index={0}>menu1</MenuItem>
-        <MenuItem index={1} disabled>
-          menu2
-        </MenuItem>
-        <MenuItem index={2}>menu2</MenuItem>
+        <MenuItem>menu1</MenuItem>
+        <MenuItem disabled>menu2</MenuItem>
+        <MenuItem>menu3</MenuItem>
+        <SubMenu title="sub">
+          <MenuItem>menu4</MenuItem>
+          <MenuItem>menu5</MenuItem>
+          <MenuItem>menu6</MenuItem>
+        </SubMenu>
       </Menu>
       <Menu
         onSelect={(index) => {
@@ -52,11 +30,14 @@ function App() {
         }}
         mode="vertical"
       >
-        <MenuItem index={0}>menu1</MenuItem>
-        <MenuItem index={1} disabled>
-          menu2
-        </MenuItem>
-        <MenuItem index={2}>menu2</MenuItem>
+        <MenuItem>menu1</MenuItem>
+        <MenuItem disabled>menu2</MenuItem>
+        <MenuItem>menu2</MenuItem>
+        <SubMenu title="sub">
+          <MenuItem>menu4</MenuItem>
+          <MenuItem>menu5</MenuItem>
+          <MenuItem>menu6</MenuItem>
+        </SubMenu>
       </Menu>
       {/* <header className="App-header">
         BUTTON
