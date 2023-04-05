@@ -1,7 +1,10 @@
 import React from "react";
 import Alert, { AlertType } from "./components/Alert/alert";
 import Button, { ButtonSize, ButtonType } from "./components/Button/button";
-import Menu, { MenuMode } from "./components/Menu/menu";
+import MenuItem from "./components/Menu2/menuItem";
+// import Menu, { MenuMode } from "./components/Menu/menu";
+import Menu from "./components/Menu2/menu";
+
 function App() {
   const items = [
     {
@@ -32,7 +35,12 @@ function App() {
   ];
   return (
     <div className="App">
-      <header className="App-header">
+      <Menu>
+        <MenuItem>menu1</MenuItem>
+        <MenuItem disabled>menu2</MenuItem>
+        <MenuItem>menu2</MenuItem>
+      </Menu>
+      {/* <header className="App-header">
         BUTTON
         <Button
           size={ButtonSize.Large}
@@ -78,7 +86,7 @@ function App() {
         <Menu items={items} mode={MenuMode.Horizontal} />
         <div style={{ height: "100px" }}></div>
         <Menu items={items} mode={MenuMode.Vertical} />
-      </header>
+      </header> */}
     </div>
   );
 }
