@@ -29,6 +29,7 @@ function App() {
           alert(index);
         }}
         mode="vertical"
+        defaultOpenSubMenus={["3"]}
       >
         <MenuItem>menu1</MenuItem>
         <MenuItem disabled>menu2</MenuItem>

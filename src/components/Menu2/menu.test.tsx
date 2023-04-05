@@ -11,12 +11,12 @@ import MenuItem from "./menuItem";
 const testProps: MenuProps = {
   className: "test",
   onSelect: jest.fn(),
-  defaultIndex: 0,
+  defaultIndex: "0",
 };
 const testVerProps: MenuProps = {
   mode: "vertical",
   onSelect: jest.fn(),
-  defaultIndex: 0,
+  defaultIndex: "0",
 };
 
 const generateMenu = (props: MenuProps) => {
