@@ -17,10 +17,13 @@ type ThemeProps =
 
 interface IconProps extends FontAwesomeIconProps {
   theme?: ThemeProps;
+  className?: string;
 }
 const Icon: React.FC<IconProps> = (props) => {
-  const { theme, ...restProps } = props;
-  const classes = classname("icon", { [`icon-${theme}`]: theme });
+  const { theme, className, ...restProps } = props;
+  const classes = classname("super-icon", className, {
+    [`icon-${theme}`]: theme,
+  });
 
   return <FontAwesomeIcon className={classes} {...restProps} />;
 };
