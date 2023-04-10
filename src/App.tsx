@@ -5,10 +5,16 @@ import MenuItem from "./components/Menu2/menuItem";
 // import Menu, { MenuMode } from "./components/Menu/menu";
 import Menu from "./components/Menu2/menu";
 import SubMenu from "./components/Menu2/subMenu";
+import Icon from "./components/Icon/icon";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+library.add(fas);
 
 function App() {
   return (
     <div className="App">
+      <Icon theme="primary" icon="coffee" />
+      <Icon theme="danger" icon="refresh" />
       <Menu
         onSelect={(index) => {
           alert(index);
